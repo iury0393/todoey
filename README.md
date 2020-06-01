@@ -1,4 +1,4 @@
-[![Latest Version on Flutter](https://img.shields.io/badge/Flutter-1.17.0-blue)](https://flutter.dev/docs/get-started/install)[![Latest Version on Android Studio](https://img.shields.io/badge/Android%20Studio-3.6.1-green)](https://developer.android.com/studio)
+[![Latest Version on Flutter](https://img.shields.io/badge/Flutter-1.17.0-blue)](https://flutter.dev/docs/get-started/install) [![Latest Version on Android Studio](https://img.shields.io/badge/Android%20Studio-3.6.1-green)](https://developer.android.com/studio)
 
 #  TodoEY
 
