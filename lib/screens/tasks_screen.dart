@@ -1,20 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:todoey/components/tasks_list.dart';
+import 'package:todoey/models/task_data.dart';
 import 'package:todoey/screens/add_task_screen.dart';
-import 'package:todoey/models/task.dart';
+import 'package:provider/provider.dart';
 
-class TasksScreen extends StatefulWidget {
-  @override
-  _TasksScreenState createState() => _TasksScreenState();
-}
-
-class _TasksScreenState extends State<TasksScreen> {
-  List<Task> task = [
-    Task(name: 'Tarefa 1'),
-    Task(name: 'Tarefa 2'),
-    Task(name: 'Tarefa 3'),
-  ];
-
+class TasksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,9 +19,9 @@ class _TasksScreenState extends State<TasksScreen> {
                 padding: EdgeInsets.only(
                     bottom: MediaQuery.of(context).viewInsets.bottom),
                 child: AddTaskScreen((newTaskTitle) {
-                  setState(() {
-                    task.add(Task(name: newTaskTitle));
-                  });
+//                  setState(() {
+//                    task.add(Task(name: newTaskTitle));
+//                  });
                   Navigator.pop(context);
                 }),
               ),
@@ -70,7 +60,7 @@ class _TasksScreenState extends State<TasksScreen> {
                   ),
                 ),
                 Text(
-                  '${task.length} Tarefas',
+                  '${Provider.of<TaskData>(context).taskCount} Tarefas',
                   style: TextStyle(
                     fontSize: 18.0,
                     color: Colors.white,
@@ -89,7 +79,7 @@ class _TasksScreenState extends State<TasksScreen> {
                   topRight: Radius.circular(30.0),
                 ),
               ),
-              child: TasksList(task),
+              child: TasksList(),
             ),
           ),
         ],
