@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todoey/components/tasks_tile.dart';
 import 'package:provider/provider.dart';
-import 'package:todoey/models/task.dart';
 import 'package:todoey/models/task_data.dart';
 
 class TasksList extends StatelessWidget {
@@ -17,6 +16,9 @@ class TasksList extends StatelessWidget {
               isChecked: task.isDone,
               checkboxCallback: (checkboxState) {
                 taskData.updateTask(task);
+              },
+              longPressCallback: () {
+                taskData.deleteTask(task);
               },
             );
           },
